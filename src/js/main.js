@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
 
   const blackHole = document.querySelector("#part-1-blackHole");
   const imgGalaxy = document.querySelector(".part-1-img");
-  const part1Book = document.querySelector(".part-1-book");
+  const part1Book = document.querySelector(".part-1-shop");
 
   let isExpanded = false; // Variable pour savoir si le cercle est agrandi
 
@@ -103,7 +103,7 @@ window.addEventListener("load", () => {
 
   const track = document.querySelector(".slider-track");
   const container = document.querySelector(".horizontal-mask");
-  const img = document.querySelector(".horizantal-goinging img");
+  const img = document.querySelector(".horizontal-goinging img");
 
   if (!track || !container || !img) return;
 
@@ -115,7 +115,7 @@ window.addEventListener("load", () => {
     scrollTrigger: {
       trigger: ".horizontal-mask",
       start: "top top",
-      end: "+=500%",
+      // end: "+=500%",
       pin: true,
       scrub: 1,
       markers: true,
