@@ -115,7 +115,7 @@ document.addEventListener("scroll", () => {
 
 /////
 //
-part3Timline.to("#lightning", { opacity: 1 });
+part3Timeline.to("#lightning-1", { opacity: 1 });
 
 ///////
 
@@ -236,12 +236,32 @@ parallax.to(
 // });
 
 // Attendre que l'image soit chargée pour avoir les bonnes dimensions
+gsap.registerPlugin(ScrollTrigger);
+
+// === Animation verticale part-4 ===
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".container-part-4",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: false,
+      markers: true,
+    },
+  })
+  .to(".part-4-baby", { opacity: 0 })
+  .to(".part-4-effect", { opacity: 0 }, "<")
+  .to(".part-4-looking", { opacity: 1 }, "<");
+
+// === Scroll horizontal ===
 window.addEventListener("load", () => {
   const track = document.querySelector(".slider-track");
   const container = document.querySelector(".horizontal-mask");
   const img = document.querySelector(".horizantal-goinging img");
 
-  // Calculer la distance à parcourir
+  if (!track || !container || !img) return;
+
   const distance = img.offsetWidth - container.offsetWidth;
 
   gsap.to(".slider-track", {
@@ -253,8 +273,11 @@ window.addEventListener("load", () => {
       end: "+=" + distance,
       pin: true,
       scrub: 1,
-      markers: true, // Enlève après test
+      markers: true,
       anticipatePin: 1,
     },
   });
+
+  // IMPORTANT : rafraîchir après création
+  ScrollTrigger.refresh();
 });
