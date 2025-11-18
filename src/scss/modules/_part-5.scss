@@ -1,10 +1,6 @@
 .container-part-5 {
-  position: relative;
-  z-index: 2;
-}
-
-.part-5-sleeping {
-  width: 100%;
+  // position: relative;
+  // z-index: 1;
 }
 
 .part-5-snow {
@@ -13,8 +9,7 @@
 }
 .part-5-snowflake {
   position: absolute;
-  top: -23%;
-  bottom: 50%;
+  width: 100%;
 }
 
 .part-5-fin {
@@ -26,12 +21,12 @@
   bottom: 0;
 }
 
-// .part-5-snowflake {
-//   width: 4%;
-//   height: 4%;
-//   border-radius: 50%;
-//   position: absolute;
-//   top: -10%;
-//   left: 50%;
-//   transform: translateX(-50%);
-// }
+.part-5-snowflake {
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -153,31 +153,31 @@ window.addEventListener("load", () => {
 
   /// Vérifier que ça fonctionne
   // Animation du flocon de neige avec mouvement zigzag
-  gsap.to(".part-5-snowflake", {
-    scrollTrigger: {
-      trigger: ".part-5-snow",
-      start: "top top",
-      end: "bottom bottom",
-      pin: true,
-      scrub: true,
-      markers: true, // false pour retirer le texte qui indique end scrolling
-    },
-    y: "220vh", // Descend jusqu'en bas
-    x: "+=100vw", // Mouvement horizontal pour créer le zigzag
-    ease: "sine.inOut",
-    motionPath: {
-      path: [
-        { x: 0, y: 0 },
-        { x: 100, y: "25vh" },
-        { x: -50, y: "50vh" },
-        { x: 120, y: "75vh" },
-        { x: -80, y: "100vh" },
-        { x: 90, y: "125vh" },
-        { x: -40, y: "150vh" },
-        { x: 60, y: "175vh" },
-        { x: 0, y: "200vh" },
-      ],
-      curviness: 1.5,
-    },
-  });
+  // gsap.to(".part-5-snowflake", {
+  //   scrollTrigger: {
+  //     trigger: ".part-5-snow",
+  //     start: "top top",
+  //     end: "bottom bottom",
+  //     pin: true,
+  //     scrub: true,
+  //     markers: true, // false pour retirer le texte qui indique end scrolling
+  //   },
+  //   y: "220vh", // Descend jusqu'en bas
+  //   x: "+=100vw", // Mouvement horizontal pour créer le zigzag
+  //   ease: "sine.inOut",
+  //   motionPath: {
+  //     path: [
+  //       { x: 0, y: 0 },
+  //       { x: 100, y: "25vh" },
+  //       { x: -50, y: "50vh" },
+  //       { x: 120, y: "75vh" },
+  //       { x: -80, y: "100vh" },
+  //       { x: 90, y: "125vh" },
+  //       { x: -40, y: "150vh" },
+  //       { x: 60, y: "175vh" },
+  //       { x: 0, y: "200vh" },
+  //     ],
+  //     curviness: 1.5,
+  //   },
+  // });
 });
