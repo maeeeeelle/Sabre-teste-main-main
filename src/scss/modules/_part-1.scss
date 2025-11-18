@@ -22,104 +22,117 @@
 .part-1-img:hover {
   transform: scale(2);
 }
-
-p:hover {
+.part-1-text {
+  position: absolute;
+  color: var(--yellow, #dadc7b);
+  text-align: center;
+  font-family: "Rama Gothic C";
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  top: 844px;
+  left: 89px;
+}
+.part-1-text:hover {
   opacity: 1;
 }
 
-.part-1-book {
+.part-1-shop {
   position: absolute;
-  left: 1046px;
+  right: 12%;
+  top: -10%;
+  width: 15%;
+  height: 25%;
 
-  .part-1-form {
-    position: absolute;
-    top: 120px;
-    left: 0;
-    margin-left: 44px;
-    margin-top: -44px;
-  }
-
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    flex-shrink: 0;
-    animation: rotate 1.5s infinite;
-    transform-origin: center center;
-    width: 129.021px;
-    height: 129.021px;
-    z-index: 3;
-    fill: var(--pink);
-    cursor: pointer;
-  }
-
-  .part-1-svg-pink-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    flex-shrink: 0;
-    animation: rotate 1.5s infinite;
-    transform-origin: center center;
-    width: 129.021px;
-    height: 129.021px;
-    z-index: 2;
-    transition: width 0.3s ease, height 0.3s ease;
-    cursor: pointer;
-    opacity: 0;
-  }
-
-  .part-1-book-img-1 {
-    position: absolute;
-    width: 106.027px;
-    height: 193.486px;
-    flex-shrink: 0;
+  .part-1-leg-left {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    height: 100%;
     z-index: 4;
-    top: -90px;
-    left: 10px;
     animation: moveUpDown1 1.5s infinite;
     transform-origin: top center;
   }
 
-  .part-1-book-img-2 {
+  .part-1-leg-right {
     position: absolute;
-    width: 98.014px;
-    height: 193.486px;
-    flex-shrink: 0;
+    top: 0%;
+    right: 0%;
+    width: 50%;
+    height: 100%;
     z-index: 4;
-    top: -90px;
-    left: 100px;
     animation: moveUpDown2 1.5s infinite;
     transform-origin: top center;
   }
 }
 
-.part-1-book:hover {
-  .part-1-form {
-    left: -20px;
-  }
+.part-1-form {
+  position: absolute;
+  bottom: -75%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 
-  svg {
-    width: 220.771px;
-    height: 220.771px;
-    animation-play-state: paused;
-    opacity: 0;
+  .part-1-svg-pink {
+    width: 100%;
+    height: 65%;
+    animation: rotate 1.5s infinite;
+    transform-origin: center center;
   }
 
   .part-1-svg-pink-text {
-    width: 220.771px;
-    height: 220.771px;
+    animation: rotate 1.5s infinite;
+    transform-origin: center center;
+    width: 0%;
+    height: 0%;
+    z-index: 2;
+    opacity: 0;
+  }
+}
+
+.part-1-shop:hover {
+  right: 10%;
+  width: 20%;
+  height: 30%;
+
+  .part-1-leg-left,
+  .part-1-leg-right {
+    width: 40%;
+    height: 90%;
+    animation-play-state: paused;
+    transform: translateY(0) !important;
+  }
+
+  .part-1-leg-right {
+    top: 7%;
+    right: 10%;
+  }
+
+  .part-1-leg-left {
+    top: 7%;
+    left: 10%;
+  }
+
+  .part-1-form {
+    top: 5%;
+    left: 15%;
+  }
+
+  .part-1-svg-pink {
+    animation-play-state: paused;
+    opacity: 0;
+    transform: translateY(0) !important;
+  }
+
+  .part-1-svg-pink-text {
+    width: 70%;
+    height: 65%;
     animation-play-state: paused;
     transform: translateY(0) !important;
     opacity: 1;
-  }
-
-  .part-1-book-img-1,
-  .part-1-book-img-2 {
-    width: 149px;
-    height: 272px;
-    animation-play-state: paused;
-    transform: translateY(0) !important;
-    top: -140;
   }
 }
 
