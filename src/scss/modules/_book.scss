@@ -122,6 +122,12 @@ button {
   line-height: normal;
 }
 
+.book-scale {
+  transition: transform 0.25s ease-in-out;
+}
+.book-scale:hover {
+  transform: scale(1.1);
+}
 .book-text {
   width: 437px;
   display: flex;

@@ -85,21 +85,49 @@ window.addEventListener("load", () => {
   part2Timline.to("#cloud-2", { opacity: 0.5, x: -280 });
   part2Timline.to("#cloud-3", { opacity: 0.7, x: 100 });
 
+  const effectCase = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".part-3-parallax",
+      scrub: true,
+      end: "+=1200vh",
+      pin: ".part-3-parallax",
+      pinSpacing: true,
+      markers: true,
+    },
+  });
+  effectCase.to("#case-1", { opacity: 1, y: -30 });
+  effectCase.to("#case-2", { opacity: 1, y: -30 });
+
+  //
+
+  const storm = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".part-3-foudre",
+      scrub: true,
+      end: "+=1100vh",
+      start: "top top",
+      pin: ".part-3-foudre",
+      pinSpacing: true,
+      markers: true,
+    },
+  });
+  storm.to("#lightning-1", { opacity: 1 });
+
   // === Animation verticale part-4 ===
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: ".container-part-4",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        pin: false,
-        markers: true,
-      },
-    })
-    .to(".part-4-baby", { opacity: 0 })
-    .to(".part-4-effect", { opacity: 0 }, "<")
-    .to(".part-4-looking", { opacity: 1 }, "<");
+
+  const blackout = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".container-part-4",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: true,
+      pin: false,
+      markers: true,
+    },
+  });
+  blackout.to(".part-4-baby", { opacity: 0 });
+  blackout.to(".part-4-effect", { opacity: 0 });
+  blackout.to(".part-4-looking", { opacity: 1 }, "<");
 
   const track = document.querySelector(".slider-track");
   const container = document.querySelector(".horizontal-mask");
@@ -123,88 +151,7 @@ window.addEventListener("load", () => {
     },
   });
 
-  // IMPORTANT : rafraîchir après création
-  // ScrollTrigger.refresh();
-
   /// Vérifier que ça fonctionne
-
-  const part3Timline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".part-3-cave",
-      start: "top top",
-      scrub: true,
-      pin: ".part-3-parallax",
-      pinSpacing: true,
-      markers: true,
-    },
-  });
-  part3Timline.to("#lightning-1", { opacity: 1 });
-
-  //
-
-  // document.addEventListener("scroll", () => {
-  //   document.querySelectorAll(".part-3-case").forEach((el) => {
-  //     const rect = el.getBoundingClientRect();
-  //     const inMiddle =
-  //       rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2;
-  //     el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  //     if (inMiddle) {
-  //       el.style.opacity = "1";
-  //       el.style.transform = "scale(1.05)";
-  //     } else {
-  //       el.style.opacity = "0";
-  //       el.style.transform = "scale(1)";
-  //     }
-  //   });
-  // });
-
-  /////
-  //
-
-  ///////
-
-  ///
-  //
-  //
-  //
-  // HORIZONTAL
-  // gsap.to(".slider-track", {
-  //   scrollTrigger: {
-  //     trigger: ".horizontal-mask",
-  //     start: "top top",
-  //     end: "+800%",
-  //     pin: true,
-  //     scrub: true,
-  //     markers: true, //false pour retiré le text qui intique end scrolling
-  //   },
-  //   x: "-75%",
-  //   ease: "sine.inOut",
-  // });
-
-  // const img = document.querySelector(".screen img");
-  // const distance = img.naturalWidth - window.innerWidth; // largeur réelle - viewport
-
-  // gsap.to(".slider-track", {
-  //   x: -distance, // déplace exactement la largeur de l'image
-  //   ease: "none",
-  //   scrollTrigger: {
-  //     trigger: ".slider-mask",
-  //     start: "top top",
-  //     end: "+=" + distance, // scroll sur toute la distance
-  //     pin: true,
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  // });
-
-  // Animation horizontale
-  /////
-  //
-  ///
-  //
-  //
-  //
-
   // Animation du flocon de neige avec mouvement zigzag
   gsap.to(".part-5-snowflake", {
     scrollTrigger: {
@@ -233,53 +180,4 @@ window.addEventListener("load", () => {
       curviness: 1.5,
     },
   });
-
-  const parallax = gsap.parallax({
-    scrollTrigger: {
-      trigger: ".part-3-parallax",
-      start: "top top",
-      end: "+300%",
-      scrub: true,
-      pin: true,
-      markers: true,
-    },
-  });
-  parallax.to("#case-1", {
-    y: -100,
-  });
-  parallax.to(
-    "#case-2",
-    {
-      y: -400,
-    },
-    0
-  );
-
-  // document.body.style.overflow = "hidden";
-
-  // blackHole.addEventListener("click", () => {
-  //   const img = blackHole.querySelector("img");
-
-  //   // Réduire le zoom de l'image pendant l'agrandissement du cercle
-  //   gsap.to(img, {
-  //     scale: 1, // Revient à la taille normale
-  //     duration: 0.3,
-  //     x: 20,
-  //     y: 10,
-  //     ease: "power2.out",
-  //   });
-
-  //   gsap.to(blackHole, {
-  //     scale: 45,
-  //     duration: 0.8,
-  //     ease: "power2.out",
-  //     onComplete: () => {
-  //       document.body.style.overflow = "auto";
-  //     },
-  //   });
-  // });
-
-  // Attendre que l'image soit chargée pour avoir les bonnes dimensions
-
-  // === Scroll horizontal ===
 });

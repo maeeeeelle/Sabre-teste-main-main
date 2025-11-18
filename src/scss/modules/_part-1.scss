@@ -24,18 +24,26 @@
 }
 .part-1-text {
   position: absolute;
+  bottom: 5%;
+  left: 5%;
   color: var(--yellow, #dadc7b);
-  text-align: center;
   font-family: "Rama Gothic C";
-  font-size: 54px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  top: 844px;
-  left: 89px;
-}
-.part-1-text:hover {
+  font-size: 92px;
+  font-weight: 700;
+  animation: opacity 3s infinite;
   opacity: 1;
+}
+
+@keyframes opacity {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1280px) {
+  .part-1-text {
+    bottom: 15%;
+  }
 }
 
 .part-1-shop {
