@@ -1,7 +1,6 @@
-// .container-part-1 {
-//   width: 100vw;
-//   height: 100vh;
-// }
+.container-part-1 {
+  position: relative;
+}
 .part-1-galaxy {
   position: relative;
   overflow: hidden;
@@ -29,8 +28,8 @@ p:hover {
 }
 
 .part-1-book {
-  position: relative;
-  left: 1032;
+  position: absolute;
+  left: 1046px;
 
   .part-1-form {
     position: absolute;

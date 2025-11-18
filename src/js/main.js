@@ -83,6 +83,7 @@ const part2Timline = gsap.timeline({
 part2Timline.to("#cloud-1", { opacity: 1, x: 800 });
 part2Timline.to("#cloud-2", { opacity: 0.5, x: -280 });
 part2Timline.to("#cloud-3", { opacity: 0.7, x: 100 }); // const part3Timline = gsap.timeline({
+part3Timline.to("#lightning-1", { opacity: 1 }); // const part3Timline = gsap.timeline({
 //   scrollTrigger: {
 //     trigger: ".part-3-cave",
 //     start: "top top",
