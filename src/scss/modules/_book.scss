@@ -1,0 +1,206 @@
+.container-book {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.book-marker-texte {
+  background: #d52b91;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  gap: 30px;
+  height: 20px;
+  overflow: hidden;
+  svg {
+    opacity: 0;
+  }
+  .book-history {
+    color: white;
+    text-align: center;
+    font-family: "rama-gothic-C";
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 93.768%; /* 46.884px */
+    letter-spacing: 2.5px;
+    opacity: 0;
+  }
+}
+.book-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-shrink: 0;
+  animation: swing 3s infinite; /* 2s animation + 3s pause = 5s total */
+  transform-origin: top center;
+  margin-left: 44px;
+  margin-top: -44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  z-index: 2;
+}
+@keyframes swing {
+  10% {
+    transform: rotate(4deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.book-marker:hover {
+  animation: none;
+  transform: rotate(0deg);
+}
+#book-marker-top {
+  display: block;
+  margin-bottom: -2;
+}
+#book-marker-bottom {
+  display: block;
+  margin-top: -2;
+}
+.book-marker:hover .book-marker-texte {
+  height: auto;
+  padding: 30px 0;
+  svg {
+    opacity: 1;
+  }
+  .book-history {
+    opacity: 1;
+  }
+}
+.book-infos {
+  position: relative;
+  display: flex;
+  padding: 100px 158px;
+  align-items: flex-start;
+  gap: 134px;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.book-bottom {
+  display: flex;
+  height: 476px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.book-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+
+button {
+  display: inline-flex;
+  height: 48px;
+  padding: 0 15px 0 115px;
+  align-items: center;
+  gap: 78px;
+  border: 1px solid #d52b91;
+  background: #d52b91;
+  color: #fff;
+
+  /* Zoning/button */
+  font-family: Figtree;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.book-text {
+  width: 437px;
+  display: flex;
+  height: 820px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.book-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  align-self: stretch;
+}
+.book-sabre-title {
+  display: flex;
+  gap: 27px;
+  #book-s {
+    width: 64.428px;
+    height: 216.118px;
+    flex-shrink: 0;
+  }
+
+  #book-a {
+    width: 64.277px;
+    height: 234.836px;
+    flex-shrink: 0;
+  }
+
+  #book-b {
+    width: 63.995px;
+    height: 212.624px;
+    flex-shrink: 0;
+  }
+
+  #book-r {
+    width: 64.699px;
+    height: 233.889px;
+    flex-shrink: 0;
+  }
+
+  #book-e {
+    width: 67.271px;
+    height: 212.357px;
+    flex-shrink: 0;
+  }
+}
+.book-subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.book-resume {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  align-self: stretch;
+}
+.book-win {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.book-details {
+  display: flex;
+  height: 19px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.book-line {
+  width: 1px;
+  height: 17px;
+  background: #dadc7b;
+}

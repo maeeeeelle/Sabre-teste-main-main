@@ -1,0 +1,44 @@
+.container-part-5 {
+  width: 100vw;
+  cursor: url(/src/img/snow.png);
+  z-index: 3;
+}
+
+.part-5-sleeping {
+  width: 100%;
+}
+
+.part-5-snow {
+  position: relative;
+}
+#part-5-snowflake {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  // width: 100vw;
+  // height: 100vh;
+}
+.part-5-fin {
+  position: relative;
+}
+#part-5-front {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+// .part-5-snow {
+//   position: relative;
+//   top: 0;
+//   bottom: 0;
+// }
+
+// .part-5-snowflake {
+//   width: 4%;
+//   height: 4%;
+//   border-radius: 50%;
+//   position: absolute;
+//   top: -10%;
+//   left: 50%;
+//   transform: translateX(-50%);
+// }

@@ -1,0 +1,38 @@
+.container-part-2 {
+  width: 100vw;
+  // height: 100vh;
+}
+
+.part-2-landscape {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  background-color: black;
+}
+
+.part-2-cloud {
+  position: absolute;
+  width: 50%;
+  height: 20%;
+}
+
+#cloud-1 {
+  opacity: 0;
+  top: 20%;
+  left: -30%;
+  scale: 2.5;
+}
+
+#cloud-2 {
+  opacity: 0;
+  top: 8%;
+  left: 75%;
+  scale: 1;
+}
+
+#cloud-3 {
+  opacity: 0;
+  left: 3%;
+  top: 5%;
+  scale: 2;
+}

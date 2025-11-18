@@ -1,0 +1,82 @@
+// .intro {
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// /* Container principal */
+// .horizontal-mask {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow: hidden;
+//   position: relative;
+//   background: #000;
+// }
+
+// .slider-track {
+//   display: flex;
+//   height: 100vh;
+//   will-change: transform;
+// }
+
+// .horizontal-goinging {
+//   display: flex;
+//   height: 100vh;
+//   flex-shrink: 0;
+//   width: 400vw; /* <-- déplacé ici, nécessaire pour le scroll */
+// }
+
+// .horizontal-goinging img {
+//   height: 100vh;
+//   width: auto;
+//   display: block;
+//   object-fit: contain;
+// }
+
+// /* Section après pour tester */
+// .outro {
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// /* Style pour l'image de démo */
+// .demo-image {
+//   height: 100vh;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   font-size: 3rem;
+//   color: white;
+//   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+// }
+
+.horizontal-mask {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  height: 100vh;
+  will-change: transform;
+}
+
+.horizantal-goinging {
+  display: flex;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.horizantal-goinging img {
+  height: 100vh;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}

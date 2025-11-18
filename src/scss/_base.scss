@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  display: block;
+  width: 100%;
+}
+
+body {
+  // overflow: hidden;
+  overflow-x: hidden;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  // background-color: black;
+
+  color: var(--yellow, #dadc7b);
+  font-size: 100px;
+  // scrollbar-width: none; /* Masque la barre pour Firefox */
+  // -ms-overflow-style: none; /* Masque la barre pour IE et Edge */
+}
+
+// body::-webkit-scrollbar {
+//   display: none; /* Masque la barre pour Chrome, Safari et Opera */
+// }
+
+.space {
+  width: 100%;
+  height: 100vh;
+}
+
+h2 {
+  font-family: "rama-gothic-c";
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 93.768%; /* 46.884px */
+  letter-spacing: 2.5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  font-family: "rama-gothic-c";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.25px;
+}
+
+p {
+  text-align: justify;
+  font-family: "Figtree";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 137.346%; /* 19.228px */
+}
