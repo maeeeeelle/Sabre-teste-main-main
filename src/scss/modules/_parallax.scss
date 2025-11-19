@@ -1,0 +1,33 @@
+.parallax-fin {
+  position: relative;
+  height: 100vh; /* Ajustez selon vos besoins */
+  overflow: hidden;
+  background-color: #0e0e0e;
+}
+@media (max-width: 1280px) {
+  .parallax-fin {
+    height: 70vh;
+  }
+}
+@media (max-width: 1920px) {
+  .parallax-fin {
+    height: 124vh;
+  }
+}
+
+#parallax-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+#parallax-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}

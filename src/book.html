@@ -48,23 +48,51 @@
   </div>
 
   <div class="book-infos">
-    <div class="book-button">
+    <div class="book-left">
       <img class="book-scale" src="img/livre.png" alt="" />
-      <button>
-        Acheter
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="11"
-          viewBox="0 0 22 11"
-          fill="none"
-        >
-          <path
-            d="M22 2.62347e-07L11 11L1.31174e-07 0L22 2.62347e-07Z"
-            fill="white"
-          />
-        </svg>
-      </button>
+      <div class="book-btn">
+        <button class="book-btn-leader" id="main-btn">
+          <p>Acheter sur</p>
+          <svg
+            id="leader-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="11"
+            viewBox="0 0 22 11"
+            fill="none"
+          >
+            <path
+              d="M42.3648 20.8739L21.6059 0L0.84703 20.8739C0.602107 21.0624 0.400115 21.3019 0.25473 21.5762C0.109346 21.8504 0.0239629 22.1531 0.00436083 22.4636C-0.0152412 22.7742 0.0313966 23.0853 0.141115 23.3761C0.250834 23.6668 0.421073 23.9303 0.640307 24.1488C0.859541 24.3672 1.12265 24.5355 1.41183 24.6423C1.701 24.749 2.00949 24.7917 2.31641 24.7674C2.62332 24.7432 2.9215 24.6526 3.19076 24.5017C3.46002 24.3509 3.69407 24.1433 3.87706 23.8931L19.457 8.27569V49.8279C19.457 50.404 19.6834 50.9565 20.0864 51.3638C20.4894 51.7712 21.036 52 21.6059 52C22.1759 52 22.7225 51.7712 23.1255 51.3638C23.5285 50.9565 23.7549 50.404 23.7549 49.8279V8.27569L39.3348 23.8931C39.7395 24.2992 40.2872 24.5262 40.8574 24.5242C41.4277 24.5221 41.9738 24.2912 42.3756 23.8822C42.7774 23.4732 43.002 22.9196 43 22.3432C42.998 21.7668 42.7695 21.2148 42.3648 20.8087V20.8739Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
+        <ul id="dropdown" aria-hidden="true">
+          <li>
+            <a href="https://www.dargaud.com/bd/sabre-bda5275580"
+              ><button class="dropdown-btn"><p>Dargaud</p></button></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.fr.fnac.ch/a13173344/Sabre-Tome-0-Sabre-Feres-Eric"
+              ><button class="dropdown-btn"><p>Fnac</p></button></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.amazon.fr/Sabre-0-Feres-%C3%89ric/dp/2205079328"
+              ><button class="dropdown-btn"><p>Amazon</p></button></a
+            >
+          </li>
+          <li>
+            <a href="https://www.lireka.com/fr/pp/9782205079326-sabre"
+              ><button class="dropdown-btn"><p>Lireka</p></button></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="book-text">

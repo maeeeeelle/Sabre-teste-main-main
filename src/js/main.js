@@ -177,7 +177,7 @@ window.addEventListener("load", () => {
     scrollTrigger: {
       trigger: ".horizontal-mask",
       start: "top top",
-      // end: "+=500%",
+      end: "+=" + distance,
       pin: true,
       scrub: 1,
       markers: true,
@@ -216,8 +216,8 @@ window.addEventListener("load", () => {
   // });
   // Effet parallax pour la section part-5-fin
   // Effet parallaxe pour part-5-fin
-  const parallaxSection = document.querySelector(".part-5-fin");
-  const backImage = document.getElementById("part-5-back");
+  const parallaxSection = document.querySelector(".parallax-fin");
+  const backImage = document.getElementById("parallax-back");
 
   window.addEventListener("scroll", () => {
     if (parallaxSection && backImage) {
@@ -226,8 +226,32 @@ window.addEventListener("load", () => {
 
       // L'image de fond se déplace vers le haut au scroll
       // Ajustez le multiplicateur (30) pour plus ou moins de mouvement
-      const moveAmount = scrollProgress * -180;
+      const moveAmount = scrollProgress * -120;
       backImage.style.transform = `translateY(${moveAmount}px)`;
     }
+  });
+
+  function toggleMenu() {
+    const dropdown = document.getElementById("dropdown");
+    const leaderSvg = document.getElementById("leader-svg");
+
+    if (!dropdown || !leaderSvg) {
+      console.warn("toggleMenu: éléments introuvables", {
+        dropdown,
+        leaderSvg,
+      });
+      return;
+    }
+
+    dropdown.classList.toggle("open");
+    leaderSvg.classList.toggle("rotate");
+
+    const isOpen = dropdown.classList.contains("open");
+    dropdown.setAttribute("aria-hidden", !isOpen);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("main-btn");
+    if (btn) btn.addEventListener("click", toggleMenu);
   });
 });

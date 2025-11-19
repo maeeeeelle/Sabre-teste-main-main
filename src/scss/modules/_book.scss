@@ -75,10 +75,124 @@
   svg {
     opacity: 1;
   }
+
+  .book-btn {
+    position: relative;
+  }
+
+  .dropdown-btn {
+    display: flex;
+    width: 323px;
+    height: 48px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border: 1px solid var(--pink);
+    background: var(--bg-black);
+  }
+
+  .dropdown-btn p {
+    color: var(--pink);
+    font-family: "Figtree";
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .dropdown-btn:hover {
+    border: 1px solid var(--pink);
+    background-color: var(--white);
+
+    .book-btn-leader p {
+      color: var(--white);
+    }
+  }
+
+  .book-btn-leader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 323px;
+    height: 48px;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid var(--pink);
+    background-color: var(--pink);
+    cursor: pointer;
+  }
+
+  .book-btn-leader svg {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .book-btn-leader p {
+    color: var(--white);
+    font-family: "Figtree";
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  #leader-svg-color {
+    fill: var(--white);
+    transition: transform 0.3s ease, fill 0.3s ease;
+  }
+
+  .book-btn-leader:hover {
+    background-color: var(--white);
+  }
+  .book-btn-leader:hover p {
+    color: var(--pink);
+  }
+  .book-btn-leader:hover #leader-svg-color {
+    fill: var(--pink);
+  }
+
+  #leader-svg {
+    transition: transform 0.35s ease;
+    transform-origin: 50% 50%;
+  }
+
+  #leader-svg.rotate {
+    transform: rotate(180deg);
+  }
+
+  #dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 10;
+  }
+
+  #dropdown.open {
+    opacity: 1;
+    max-height: 400px;
+  }
+
+  #dropdown.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+
   .book-history {
     opacity: 1;
   }
 }
+.book-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .book-infos {
   position: relative;
   display: flex;
@@ -88,6 +202,7 @@
   flex-shrink: 0;
   justify-content: space-between;
 }
+
 .book-bottom {
   display: flex;
   height: 476px;
@@ -96,37 +211,15 @@
   align-items: flex-start;
   align-self: stretch;
 }
-.book-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 45px;
-}
-
-button {
-  display: inline-flex;
-  height: 48px;
-  padding: 0 15px 0 115px;
-  align-items: center;
-  gap: 78px;
-  border: 1px solid #d52b91;
-  background: #d52b91;
-  color: #fff;
-
-  /* Zoning/button */
-  font-family: Figtree;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-}
 
 .book-scale {
   transition: transform 0.25s ease-in-out;
 }
+
 .book-scale:hover {
   transform: scale(1.1);
 }
+
 .book-text {
   width: 437px;
   display: flex;
@@ -136,6 +229,7 @@ button {
   align-items: flex-start;
   flex-shrink: 0;
 }
+
 .book-title {
   display: flex;
   flex-direction: column;
@@ -176,6 +270,7 @@ button {
     flex-shrink: 0;
   }
 }
+
 .book-subtitle {
   display: flex;
   justify-content: space-between;
@@ -190,12 +285,14 @@ button {
   gap: 5px;
   align-self: stretch;
 }
+
 .book-win {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
 }
+
 .book-details {
   display: flex;
   height: 19px;
@@ -204,6 +301,7 @@ button {
   flex-shrink: 0;
   align-self: stretch;
 }
+
 .book-line {
   width: 1px;
   height: 17px;

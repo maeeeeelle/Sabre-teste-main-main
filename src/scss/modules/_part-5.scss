@@ -22,38 +22,3 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
-// .part-5-fin {
-//   position: relative;
-// }
-// #part-5-front {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-// }
-// #part-5-back {
-//   transition: transform 0.1s ease-out;
-//   will-change: transform;
-// }
-.part-5-fin {
-  position: relative;
-  height: 100vh; /* Ajustez selon vos besoins */
-  overflow: hidden;
-}
-
-#part-5-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-}
-
-#part-5-front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
-}
