@@ -12,36 +12,64 @@ window.addEventListener("load", () => {
 
   let isExpanded = false; // Variable pour savoir si le cercle est agrandi
 
+  const cursorText = document.createElement("div");
+  cursorText.textContent = "Scroll";
+  cursorText.style.cssText = `
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-family: "rama-gothic-c";
+  font-size: 70px;
+  font-weight: 500;
+  color: var(--yellow);
+  opacity: 0;
+  transform: translate(-50%, 20%);
+`;
+  document.body.appendChild(cursorText);
+
+  document.addEventListener("mousemove", (e) => {
+    cursorText.style.left = e.clientX + "px";
+    cursorText.style.top = e.clientY + 50 + "px"; // +50px en dessous du curseur
+  });
+
   imgGalaxy.addEventListener("click", () => {
     if (!isExpanded) {
-      // Animation d'agrandissement du trou noir
       gsap.to(imgGalaxy, {
-        scale: 2,
+        scale: 8,
         duration: 0.3,
         borderRadius: 0,
         ease: "power2.out",
       });
 
       gsap.to(imgGalaxy, {
-        scale: 40, // correction de la syntaxe
+        scaleY: 32,
+        scaleX: 40,
         duration: 0.8,
         ease: "power2.out",
         onComplete: () => {
           document.body.style.overflow = "auto";
           isExpanded = true;
 
-          // Masquer le part-1-book
           gsap.to(part1Book, {
             opacity: 0,
             display: "none",
-            duration: 0.5,
+            duration: 0.1,
+            ease: "power2.out",
+          });
+
+          // Afficher le texte "Scroll"
+          gsap.to(cursorText, {
+            opacity: 1,
+            duration: 0.3,
             ease: "power2.out",
           });
         },
       });
     } else {
-      // Animation inverse (rétrécissement)
       gsap.to(imgGalaxy, {
+        scale: 1,
+        x: "0%",
+        y: "0%",
         duration: 0.3,
         borderRadius: 100,
         ease: "power2.in",
@@ -55,11 +83,17 @@ window.addEventListener("load", () => {
           document.body.style.overflow = "hidden";
           isExpanded = false;
 
-          // Réafficher le part-1-book
           gsap.to(part1Book, {
             opacity: 1,
             display: "block",
-            duration: 0.5,
+            duration: 0.1,
+            ease: "power2.in",
+          });
+
+          // Masquer le texte "Scroll"
+          gsap.to(cursorText, {
+            opacity: 0,
+            duration: 0.3,
             ease: "power2.in",
           });
         },
