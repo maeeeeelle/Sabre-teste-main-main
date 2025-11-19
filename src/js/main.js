@@ -1,12 +1,24 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// Attendre que tout soit chargé
+function initAnimations() {
+  console.log("Initialisation des animations...");
 
-gsap.registerPlugin(ScrollTrigger);
+  // Vérifier que GSAP est disponible
+  if (typeof gsap === "undefined") {
+    console.error("GSAP non chargé !");
+    return;
+  }
 
-// Attendre que le DOM et les images soient chargés
-window.addEventListener("load", () => {
+  // Vérifier que ScrollTrigger est disponible
+  if (typeof ScrollTrigger === "undefined") {
+    console.error("ScrollTrigger non chargé !");
+    return;
+  }
+
+  // Enregistrer le plugin
+  gsap.registerPlugin(ScrollTrigger);
+  console.log("ScrollTrigger enregistré avec succès");
+
   // Initialisation des éléments
-  const blackHole = document.querySelector("#part-1-blackHole");
   const imgGalaxy = document.querySelector(".part-1-img");
   const part1Book = document.querySelector(".part-1-shop");
 
@@ -119,9 +131,15 @@ window.addEventListener("load", () => {
       },
     });
 
-    part2Timeline.to("#cloud-1", { opacity: 1, x: 800 });
-    part2Timeline.to("#cloud-2", { opacity: 0.5, x: -280 });
-    part2Timeline.to("#cloud-3", { opacity: 0.7, x: 100 });
+    if (document.querySelector("#cloud-1")) {
+      part2Timeline.to("#cloud-1", { opacity: 1, x: 800 });
+    }
+    if (document.querySelector("#cloud-2")) {
+      part2Timeline.to("#cloud-2", { opacity: 0.5, x: -280 });
+    }
+    if (document.querySelector("#cloud-3")) {
+      part2Timeline.to("#cloud-3", { opacity: 0.7, x: 100 });
+    }
   }
 
   // Animation Part 3 - Cases
@@ -136,8 +154,13 @@ window.addEventListener("load", () => {
         markers: false,
       },
     });
-    effectCase.to("#case-1", { opacity: 1, y: -30 });
-    effectCase.to("#case-2", { opacity: 1, y: -30 });
+
+    if (document.querySelector("#case-1")) {
+      effectCase.to("#case-1", { opacity: 1, y: -30 });
+    }
+    if (document.querySelector("#case-2")) {
+      effectCase.to("#case-2", { opacity: 1, y: -30 });
+    }
   }
 
   // Animation Part 3 - Foudre
@@ -153,7 +176,10 @@ window.addEventListener("load", () => {
         markers: false,
       },
     });
-    storm.to("#lightning-1", { opacity: 1 });
+
+    if (document.querySelector("#lightning-1")) {
+      storm.to("#lightning-1", { opacity: 1 });
+    }
   }
 
   // Animation Part 4 - Blackout
@@ -168,9 +194,16 @@ window.addEventListener("load", () => {
         markers: false,
       },
     });
-    blackout.to(".part-4-baby", { opacity: 0 });
-    blackout.to(".part-4-effect", { opacity: 0 });
-    blackout.to(".part-4-looking", { opacity: 1 }, "<");
+
+    if (document.querySelector(".part-4-baby")) {
+      blackout.to(".part-4-baby", { opacity: 0 });
+    }
+    if (document.querySelector(".part-4-effect")) {
+      blackout.to(".part-4-effect", { opacity: 0 });
+    }
+    if (document.querySelector(".part-4-looking")) {
+      blackout.to(".part-4-looking", { opacity: 1 }, "<");
+    }
   }
 
   // Animation horizontale slider
@@ -228,6 +261,12 @@ window.addEventListener("load", () => {
     btn.addEventListener("click", toggleMenu);
   }
 
-  // Rafraîchir ScrollTrigger après le chargement complet
-  ScrollTrigger.refresh();
-});
+  // Rafraîchir ScrollTrigger
+  setTimeout(() => {
+    ScrollTrigger.refresh();
+    console.log("Animations initialisées avec succès !");
+  }, 100);
+}
+
+// Lancer les animations quand tout est prêt
+window.addEventListener("load", initAnimations);
