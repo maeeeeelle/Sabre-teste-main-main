@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
       });
 
       gsap.to(imgGalaxy, {
-        scaleY: 32,
+        scaleY: 33,
         scaleX: 40,
         duration: 0.8,
         ease: "power2.out",
@@ -214,4 +214,20 @@ window.addEventListener("load", () => {
   //     curviness: 1.5,
   //   },
   // });
+  // Effet parallax pour la section part-5-fin
+  // Effet parallaxe pour part-5-fin
+  const parallaxSection = document.querySelector(".part-5-fin");
+  const backImage = document.getElementById("part-5-back");
+
+  window.addEventListener("scroll", () => {
+    if (parallaxSection && backImage) {
+      const rect = parallaxSection.getBoundingClientRect();
+      const scrollProgress = -rect.top / window.innerHeight;
+
+      // L'image de fond se déplace vers le haut au scroll
+      // Ajustez le multiplicateur (30) pour plus ou moins de mouvement
+      const moveAmount = scrollProgress * -180;
+      backImage.style.transform = `translateY(${moveAmount}px)`;
+    }
+  });
 });
