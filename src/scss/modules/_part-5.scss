@@ -11,14 +11,16 @@
 .part-5-snowflake {
   position: absolute;
   width: 100%;
+  top: -23%;
+  z-index: 10;
 }
 
-.part-5-snowflake {
-  width: 4%;
-  height: 4%;
-  border-radius: 50%;
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
+.part-5-pic-look,
+.part-5-pic-snow {
+  position: relative;
+  width: 100%;
+  img {
+    width: 100%;
+    display: block;
+  }
 }

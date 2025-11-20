@@ -234,6 +234,45 @@ function initAnimations() {
       },
     });
   }
+  const partSnow = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".part-5-snow",
+      start: "top top",
+      end: "+=5500vh",
+      pin: ".part-5-snow",
+      scrub: 4,
+      markers: true,
+      pinSpacing: true,
+    },
+  });
+
+  gsap.set(".part-5-snowflake", { x: "-45%", y: "-10%" }); // ✅ Plus à gauche et plus haut
+
+  partSnow
+    .to(".part-5-snowflake", {
+      motionPath: {
+        path: [
+          { x: "-45%", y: "-10%" }, // ✅ Coin haut gauche
+          { x: "-25%", y: "5%" }, // ✅ Décalé à gauche
+          { x: "5%", y: "10%" }, // ✅ Décalé à gauche
+          { x: "-15%", y: "50%" }, // ✅ Décalé à gauche
+          { x: "-15%", y: "60%" }, // ✅ Décalé à gauche
+        ],
+        curviness: 1.2,
+      },
+      duration: 60,
+      ease: "none",
+    })
+    .to(".part-5-snowflake", {
+      duration: 20,
+      ease: "none",
+    })
+    .to(".part-5-snowflake", {
+      x: "-5%", // ✅ Position finale décalée à gauche
+      y: "75%",
+      duration: 20,
+      ease: "none",
+    });
 
   // Effet parallax Part 5
   const parallaxSection = document.querySelector(".parallax-fin");
@@ -251,7 +290,7 @@ function initAnimations() {
   // Menu toggle
   function toggleMenu() {
     const dropdown = document.getElementById("dropdown");
-    const leaderSvg = document.getElementById("leader-svg");
+    const leaderSvg = document.querySelector(".book-btn-leader svg");
 
     if (dropdown && leaderSvg) {
       dropdown.classList.toggle("open");
