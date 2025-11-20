@@ -89,9 +89,38 @@
     opacity: 1;
   }
 }
-
 .book-btn {
   position: relative;
+  width: 323px;
+}
+
+.dropdown-btn {
+  display: flex;
+  width: 323px;
+  height: 48px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border: 1px solid var(--pink);
+  background: var(--bg-black);
+}
+
+.dropdown-btn p {
+  color: var(--pink);
+  font-family: "Figtree";
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.dropdown-btn:hover {
+  border: 1px solid var(--pink);
+  background-color: var(--white);
+
+  .book-btn-leader p {
+    color: var(--white);
+  }
 }
 
 .book-btn-leader {
@@ -103,49 +132,47 @@
   height: 48px;
   padding: 10px;
   gap: 10px;
-  border: 1px solid #d52b91;
-  background-color: #d52b91;
+  border: 1px solid var(--pink);
+  background-color: var(--pink);
   cursor: pointer;
+}
 
-  svg {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.book-btn-leader svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-  p {
-    color: var(--white);
-    font-family: "Figtree";
-    font-size: 25px;
-    font-weight: 700;
-    margin: 0;
-  }
+.book-btn-leader p {
+  color: var(--white);
+  font-family: "Figtree";
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.book-btn-leader svg path {
+  fill: white;
+  transition: transform 0.3s ease, fill 0.3s ease;
 }
 
 .book-btn-leader:hover {
   background-color: var(--white);
-
-  p {
-    color: #d52b91;
-  }
-
-  #leader-svg path {
-    fill: #d52b91;
-  }
+}
+.book-btn-leader:hover p {
+  color: var(--pink);
+}
+.book-btn-leader:hover svg path {
+  fill: var(--pink);
 }
 
-#leader-svg path {
-  fill: var(--white);
-  transition: fill 0.3s ease;
-}
-
-#leader-svg {
+.book-btn-leader svg {
   transition: transform 0.35s ease;
   transform-origin: 50% 50%;
 }
 
-#leader-svg.rotate {
+.book-btn-leader svg.rotate {
   transform: rotate(180deg);
 }
 
@@ -159,14 +186,16 @@
   transition: max-height 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   z-index: 10;
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 #dropdown.open {
   opacity: 1;
   max-height: 400px;
+}
+
+#dropdown.active {
+  max-height: 300px;
+  opacity: 1;
 }
 
 .dropdown-btn {
@@ -197,6 +226,7 @@
 .book-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .book-infos {
