@@ -1,4 +1,10 @@
 // Attendre que tout soit chargé
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 function initAnimations() {
   console.log("Initialisation des animations...");
 
