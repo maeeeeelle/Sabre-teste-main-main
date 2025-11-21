@@ -229,20 +229,20 @@ function initAnimations() {
   }
   const partSnow = gsap.timeline({
     scrollTrigger: {
-      trigger: ".part-5-snow",
+      trigger: ".part-5-snowing",
       start: "top top",
       end: "+=5500vh",
-      pin: ".part-5-snow",
+      pin: ".part-5-snowing",
       scrub: 4,
       markers: true,
       pinSpacing: true,
     },
   });
 
-  gsap.set(".part-5-snowflake", { x: "-45%", y: "-10%" });
+  gsap.set(".part-5-crystal", { x: "-45%", y: "-10%" });
 
   partSnow
-    .to(".part-5-snowflake", {
+    .to(".part-5-crystal", {
       motionPath: {
         path: [
           { x: "-45%", y: "-10%" },
@@ -256,11 +256,11 @@ function initAnimations() {
       duration: 60,
       ease: "none",
     })
-    .to(".part-5-snowflake", {
+    .to(".part-5-crystal", {
       duration: 20,
       ease: "none",
     })
-    .to(".part-5-snowflake", {
+    .to(".part-5-crystal", {
       x: "-5%",
       y: "75%",
       duration: 20,
@@ -268,7 +268,7 @@ function initAnimations() {
     });
 
   // Effet parallax
-  const parallaxSection = document.querySelector(".parallax-fin");
+  const parallaxSection = document.querySelector(".parallax-end");
   const backImage = document.getElementById("parallax-back");
 
   if (parallaxSection && backImage) {
