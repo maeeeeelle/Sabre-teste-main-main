@@ -292,25 +292,19 @@ function initAnimations() {
     const dropdown = document.getElementById("dropdown");
     const leaderSvg = document.querySelector(".book-btn-leader svg");
 
-    if (!dropdown || !leaderSvg) {
-      console.warn("toggleMenu: éléments introuvables", {
-        dropdown,
-        leaderSvg,
-      });
-      return;
+    if (dropdown && leaderSvg) {
+      dropdown.classList.toggle("open");
+      leaderSvg.classList.toggle("rotate");
+
+      const isOpen = dropdown.classList.contains("open");
+      dropdown.setAttribute("aria-hidden", !isOpen);
     }
-
-    dropdown.classList.toggle("open");
-    leaderSvg.classList.toggle("rotate");
-
-    const isOpen = dropdown.classList.contains("open");
-    dropdown.setAttribute("aria-hidden", !isOpen);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("main-btn");
-    if (btn) btn.addEventListener("click", toggleMenu);
-  });
+  const btn = document.getElementById("main-btn");
+  if (btn) {
+    btn.addEventListener("click", toggleMenu);
+  }
 
   // Rafraîchir ScrollTrigger
   setTimeout(() => {
