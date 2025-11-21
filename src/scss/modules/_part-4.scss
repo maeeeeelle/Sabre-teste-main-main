@@ -1,9 +1,9 @@
 .container-part-4 {
   height: 200vh;
-  background-color: black;
+  background-color: var(--bg-black);
 }
 
-.part-4-layer {
+.part-4-coat {
   position: sticky;
   top: 0;
   width: 100%;
@@ -12,7 +12,7 @@
 }
 
 .part-4-baby,
-.part-4-looking {
+.part-4-outside {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,19 +26,19 @@
   opacity: 1;
 }
 
-.part-4-effect {
+.part-4-fade {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: var(--bg-black);
   z-index: 2;
   opacity: 1;
   pointer-events: none;
 }
 
-.part-4-looking {
+.part-4-outside {
   z-index: 4;
   opacity: 0;
 }

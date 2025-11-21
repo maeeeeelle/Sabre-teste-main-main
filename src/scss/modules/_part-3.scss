@@ -1,6 +1,4 @@
-.container-part-3 {
-}
-.part-3-foudre {
+.part-3-thunderstorm {
   position: relative;
 }
 #lightning-1 {
@@ -18,8 +16,8 @@
   height: 100vh;
 }
 
-.part-3-parallax {
-  background-color: rgb(0, 0, 0);
+.part-3-parallaxeffect {
+  background-color: var(--bg-black);
   position: relative;
   height: 100vh;
   overflow: hidden;

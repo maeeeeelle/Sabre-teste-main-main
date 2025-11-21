@@ -1,6 +1,6 @@
 .footer-line {
   height: 2px;
-  background: #d52b91;
+  background: var(--pink);
   align-self: stretch;
 }
 
@@ -27,7 +27,7 @@
   align-self: stretch;
 }
 .footer-textp {
-  color: var(--pink, #d52b91);
+  color: var(--pink);
   font-family: "rama-gothic-c";
   font-size: 35px;
   font-style: normal;

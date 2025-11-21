@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.part-1-img {
+.part-1-image {
   position: absolute;
   top: 45%;
   left: 51%;
@@ -19,14 +19,14 @@
   transition: 0.8s;
 }
 
-.part-1-img:hover {
+.part-1-image:hover {
   transform: scale(2);
 }
 .part-1-text {
   position: absolute;
-  bottom: 5%;
+  bottom: 15%;
   left: 5%;
-  color: var(--yellow, #dadc7b);
+  color: var(--yellow);
   font-family: "Rama Gothic C";
   font-size: 92px;
   font-weight: 700;
@@ -46,14 +46,14 @@
   }
 }
 
-.part-1-shop {
+.part-1-store {
   position: absolute;
   right: 12%;
   top: -10%;
   width: 15%;
   height: 25%;
 
-  .part-1-leg-left {
+  .part-1-left-leg {
     position: relative;
     top: 0%;
     left: 0%;
@@ -64,7 +64,7 @@
     transform-origin: top center;
   }
 
-  .part-1-leg-right {
+  .part-1-right-leg {
     position: absolute;
     top: 0%;
     right: 0%;
@@ -76,18 +76,18 @@
   }
 }
 
-.part-1-form {
+.part-1-star {
   position: absolute;
   z-index: 3;
   left: 18%;
   top: 80%;
 
-  .part-1-svg-pink {
+  .part-1-star-pink {
     animation: rotate 1.5s infinite;
     transform-origin: center center;
   }
 
-  .part-1-svg-pink-text {
+  .part-1-star-pink-text {
     animation: rotate 1.5s infinite;
     transform-origin: center center;
 
@@ -96,41 +96,41 @@
   }
 }
 
-.part-1-shop:hover {
+.part-1-store:hover {
   right: 10%;
   width: 20%;
   height: 30%;
 
-  .part-1-leg-left,
-  .part-1-leg-right {
+  .part-1-left-leg,
+  .part-1-right-leg {
     width: 40%;
     height: 90%;
     animation-play-state: paused;
     transform: translateY(0) !important;
   }
 
-  .part-1-leg-right {
+  .part-1-right-leg {
     top: 7%;
     right: 10%;
   }
 
-  .part-1-leg-left {
+  .part-1-left-leg {
     top: 7%;
     left: 10%;
   }
 
-  .part-1-form {
+  .part-1-star {
     top: 5%;
     left: 15%;
   }
 
-  .part-1-svg-pink {
+  .part-1-star-pink {
     animation-play-state: paused;
     opacity: 0;
     transform: translateY(0) !important;
   }
 
-  .part-1-svg-pink-text {
+  .part-1-star-pink-text {
     width: 100%;
     height: 65%;
     margin-top: 20%;
@@ -139,8 +139,8 @@
     opacity: 1;
   }
 }
-.part-1-shop:hover {
-  .part-1-svg-pink-text {
+.part-1-store:hover {
+  .part-1-star-pink-text {
     margin-top: 10%;
     margin-left: -5%;
   }

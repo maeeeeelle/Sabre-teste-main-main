@@ -1,5 +1,3 @@
-// Attendre que tout soit chargé
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
@@ -8,29 +6,24 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 function initAnimations() {
   console.log("Initialisation des animations...");
 
-  // Vérifier que GSAP est disponible
   if (typeof gsap === "undefined") {
     console.error("GSAP non chargé !");
     return;
   }
 
-  // Vérifier que ScrollTrigger est disponible
   if (typeof ScrollTrigger === "undefined") {
     console.error("ScrollTrigger non chargé !");
     return;
   }
 
-  // Enregistrer le plugin
   gsap.registerPlugin(ScrollTrigger);
   console.log("ScrollTrigger enregistré avec succès");
 
-  // Initialisation des éléments
-  const imgGalaxy = document.querySelector(".part-1-img");
-  const part1Book = document.querySelector(".part-1-shop");
+  const imgGalaxy = document.querySelector(".part-1-image");
+  const part1Book = document.querySelector(".part-1-store");
 
   let isExpanded = false;
 
-  // Curseur texte "Scroll"
   const cursorText = document.createElement("div");
   cursorText.textContent = "Scroll";
   cursorText.style.cssText = `
@@ -51,7 +44,7 @@ function initAnimations() {
     cursorText.style.top = e.clientY + 50 + "px";
   });
 
-  // Animation galaxie
+  // Animation partie 1 galaxie
   if (imgGalaxy) {
     imgGalaxy.addEventListener("click", () => {
       if (!isExpanded) {
@@ -125,7 +118,7 @@ function initAnimations() {
     });
   }
 
-  // Animation Part 2 - Nuages
+  // Animation Part 2 Cloud
   if (document.querySelector(".container-part-2")) {
     const part2Timeline = gsap.timeline({
       scrollTrigger: {
@@ -148,14 +141,14 @@ function initAnimations() {
     }
   }
 
-  // Animation Part 3 - Cases
-  if (document.querySelector(".part-3-parallax")) {
+  // Animation Part 3 BD cases
+  if (document.querySelector(".part-3-parallaxeffect")) {
     const effectCase = gsap.timeline({
       scrollTrigger: {
-        trigger: ".part-3-parallax",
+        trigger: ".part-3-parallaxeffect",
         scrub: true,
         end: "+=1200vh",
-        pin: ".part-3-parallax",
+        pin: ".part-3-parallaxeffect",
         pinSpacing: true,
         markers: false,
       },
@@ -169,15 +162,15 @@ function initAnimations() {
     }
   }
 
-  // Animation Part 3 - Foudre
-  if (document.querySelector(".part-3-foudre")) {
+  // Animation Part 3 éclair
+  if (document.querySelector(".part-3-thunderstorm")) {
     const storm = gsap.timeline({
       scrollTrigger: {
-        trigger: ".part-3-foudre",
+        trigger: ".part-3-thunderstorm",
         scrub: true,
         end: "+=1100vh",
         start: "top top",
-        pin: ".part-3-foudre",
+        pin: ".part-3-thunderstorm",
         pinSpacing: true,
         markers: false,
       },
@@ -188,7 +181,7 @@ function initAnimations() {
     }
   }
 
-  // Animation Part 4 - Blackout
+  // transition Part 4 fondu au noir
   if (document.querySelector(".container-part-4")) {
     const blackout = gsap.timeline({
       scrollTrigger: {
@@ -204,15 +197,15 @@ function initAnimations() {
     if (document.querySelector(".part-4-baby")) {
       blackout.to(".part-4-baby", { opacity: 0 });
     }
-    if (document.querySelector(".part-4-effect")) {
-      blackout.to(".part-4-effect", { opacity: 0 });
+    if (document.querySelector(".part-4-fade")) {
+      blackout.to(".part-4-fade", { opacity: 0 });
     }
-    if (document.querySelector(".part-4-looking")) {
-      blackout.to(".part-4-looking", { opacity: 1 }, "<");
+    if (document.querySelector(".part-4-outside")) {
+      blackout.to(".part-4-outside", { opacity: 1 }, "<");
     }
   }
 
-  // Animation horizontale slider
+  // Animation partie horizontale scroll
   const track = document.querySelector(".slider-track");
   const container = document.querySelector(".horizontal-mask");
   const img = document.querySelector(".horizontal-goinging img");
@@ -246,17 +239,17 @@ function initAnimations() {
     },
   });
 
-  gsap.set(".part-5-snowflake", { x: "-45%", y: "-10%" }); // ✅ Plus à gauche et plus haut
+  gsap.set(".part-5-snowflake", { x: "-45%", y: "-10%" });
 
   partSnow
     .to(".part-5-snowflake", {
       motionPath: {
         path: [
-          { x: "-45%", y: "-10%" }, // ✅ Coin haut gauche
-          { x: "-25%", y: "5%" }, // ✅ Décalé à gauche
-          { x: "5%", y: "10%" }, // ✅ Décalé à gauche
-          { x: "-15%", y: "50%" }, // ✅ Décalé à gauche
-          { x: "-15%", y: "60%" }, // ✅ Décalé à gauche
+          { x: "-45%", y: "-10%" },
+          { x: "-25%", y: "5%" },
+          { x: "5%", y: "10%" },
+          { x: "-15%", y: "50%" },
+          { x: "-15%", y: "60%" },
         ],
         curviness: 1.2,
       },
@@ -268,13 +261,13 @@ function initAnimations() {
       ease: "none",
     })
     .to(".part-5-snowflake", {
-      x: "-5%", // ✅ Position finale décalée à gauche
+      x: "-5%",
       y: "75%",
       duration: 20,
       ease: "none",
     });
 
-  // Effet parallax Part 5
+  // Effet parallax
   const parallaxSection = document.querySelector(".parallax-fin");
   const backImage = document.getElementById("parallax-back");
 
@@ -287,10 +280,10 @@ function initAnimations() {
     });
   }
 
-  // Menu toggle
+  // dropdown book bouton
   function toggleMenu() {
     const dropdown = document.getElementById("dropdown");
-    const leaderSvg = document.querySelector(".book-btn-leader svg");
+    const leaderSvg = document.querySelector(".book-button-leader svg");
 
     if (dropdown && leaderSvg) {
       dropdown.classList.toggle("open");
@@ -306,12 +299,11 @@ function initAnimations() {
     btn.addEventListener("click", toggleMenu);
   }
 
-  // Rafraîchir ScrollTrigger
+  // ScrollTrigger Rafraîchir
   setTimeout(() => {
     ScrollTrigger.refresh();
     console.log("Animations initialisées avec succès !");
   }, 100);
 }
 
-// Lancer les animations quand tout est prêt
 window.addEventListener("load", initAnimations);
