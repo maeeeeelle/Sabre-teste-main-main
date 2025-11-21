@@ -234,7 +234,7 @@ function initAnimations() {
       end: "+=5500vh",
       pin: ".part-5-snowing",
       scrub: 4,
-      markers: true,
+      markers: false,
       pinSpacing: true,
     },
   });
