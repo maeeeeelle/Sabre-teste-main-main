@@ -1,21 +1,3 @@
-.part-3-thunderstorm {
-  position: relative;
-}
-#lightning-1 {
-  opacity: 0;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-}
-.part-3-born {
-  width: 100%;
-}
-
-.part-3-storm {
-  width: 100%;
-  height: 100vh;
-}
-
 .part-3-parallaxeffect {
   background-color: var(--bg-black);
   position: relative;
@@ -23,10 +5,22 @@
   overflow: hidden;
 }
 
+.part-3-born {
+  width: 100%;
+}
+
+.part-3-thunderstorm {
+  position: relative;
+}
+
+.part-3-storm {
+  width: 100%;
+  height: 100vh;
+}
+
 .part-3-case {
   z-index: 2;
 }
-
 #case-1 {
   position: absolute;
   top: 7%;
@@ -48,4 +42,11 @@
   #case-2 {
     width: 90%;
   }
+}
+
+#lightning-1 {
+  opacity: 0;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }

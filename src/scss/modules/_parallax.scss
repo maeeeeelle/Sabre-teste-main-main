@@ -4,10 +4,13 @@
   overflow: hidden;
   background-color: #0e0e0e;
 }
-@media (max-width: 1280px) {
-  .parallax-end {
-    height: 109vh;
-  }
+
+#parallax-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
 }
 
 #parallax-back {
@@ -18,11 +21,8 @@
   will-change: transform;
   transition: transform 0.1s ease-out;
 }
-
-#parallax-front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 3;
+@media (max-width: 1280px) {
+  .parallax-end {
+    height: 109vh;
+  }
 }
